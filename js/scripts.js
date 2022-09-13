@@ -1,4 +1,4 @@
-let pokemonList = [ // blank array of pokemon
+let pokemonList = [ 
 {
     name: 'Venusaur',
     height: 2,
@@ -18,3 +18,7 @@ let pokemonList = [ // blank array of pokemon
     types: ['grass', 'poison']
 }   
 ];
+
+for (let i=0; i < pokemonList.length; i++){
+    document.write(pokemonList[i].name + '  - Height: '+ pokemonList[i].height + 'm')
+  }

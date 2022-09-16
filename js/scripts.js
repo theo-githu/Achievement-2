@@ -42,3 +42,4 @@ console.log(pokemonRepository.getAll()); //[]
 pokemonRepository.add({ name: 'Mew' });
 console.log(pokemonRepository.getAll()); //[{name: 'Mew'}]
 
+

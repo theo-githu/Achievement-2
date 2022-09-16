@@ -1,6 +1,4 @@
 let pokemonRepository = (function () {
-
-
     let pokemonList = [
         {
             name: 'Venusaur',
@@ -22,24 +20,25 @@ let pokemonRepository = (function () {
         }
     ];
 
-    // forEach() loops 
-    let height = ' - Height: '
-    pokemonList.forEach(function (pokemon) {
-        document.write(pokemon.name + height + pokemon.height + 'm' + '<br>');
-    });
+    function getAll() {
+        return pokemonList;
+    }
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
 
     return {
-        add: function (pokemon) {
-            pokemonList.push(pokemon);
-        },
-        getAll: function () {
-            return pokemonList;
-        }
-    };
+        getAll: getAll,
+        add: add
+    }
 })();
 
 console.log(pokemonRepository.getAll()); //[]
 pokemonRepository.add({ name: 'Mew' });
 console.log(pokemonRepository.getAll()); //[{name: 'Mew'}]
 
-
+// forEach() loops 
+let height = ' - Height: '
+pokemonList.forEach(function (pokemon) {
+    document.write(pokemon.name + height + pokemon.height + 'm' + '<br>');
+});

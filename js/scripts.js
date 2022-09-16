@@ -34,7 +34,7 @@ let pokemonRepository = (function () {
 })();
 
 console.log(pokemonRepository.getAll()); //[]
-pokemonRepository.add({ name: 'Mew' });
+pokemonRepository.add({ name: 'Mew', height: 0.4, abilities: ['Synchronize'], types: ['psychic'] });
 console.log(pokemonRepository.getAll()); //[{name: 'Mew'}]
 
 // forEach() loops 

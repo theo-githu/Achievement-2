@@ -19,12 +19,8 @@ let pokemonList = [
     }
 ];
 
-let height = ' - Height: ';
-let m = 'm';
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height < 1.3) {
-        document.write(pokemonList[i].name + height + pokemonList[i].height + m + ' is the smallest pokemon.');
-    } else {
-        document.write(pokemonList[i].name + height + pokemonList[i].height + m + '<br>');
-    }
-}
+// forEach() loops 
+let height = ' - Height: '
+pokemonList.forEach(function (pokemon) {
+    console.log(pokemon.name + height + pokemone.height + 'm');
+});

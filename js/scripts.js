@@ -22,5 +22,5 @@ let pokemonList = [
 // forEach() loops 
 let height = ' - Height: '
 pokemonList.forEach(function (pokemon) {
-    console.log(pokemon.name + height + pokemone.height + 'm');
+    document.write(pokemon.name + height + pokemone.height + 'm' + '<br>');
 });

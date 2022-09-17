@@ -62,8 +62,15 @@ let pokemonRepository = (function () {
         button.classList.add('button-class');
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);
+        // add event listener - listens to clicks on pokemon buttons and returns information of the button
+        button.addEventListener('click', function (event) {
+            showDetails(pokemon); //event handler 
+        });
     }
 
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
 
     // filter function. Starts at 0 as array
     function filterPokemonByName(name) {
@@ -74,7 +81,8 @@ let pokemonRepository = (function () {
     return {
         getAll: getAll,
         add: add,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetail: showDetails
     };
 })();
 

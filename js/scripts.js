@@ -23,21 +23,47 @@ let pokemonRepository = (function () {
         }
     ];
 
-    // Function returns list of pokemon 
+    // Function adds pokemon and validates typeof    
+    // function add(pokemon) {
+    //     if (typeof pokemon !== 'object') {
+    //         console.log('Please assign a Pokemon');
+    //     }
+    //     let keys = Object.keys(pokemon);
+    //     if (!keys.includes('name')) {
+    //         console.log('Requirements are missing');
+    //     }
+    //     pokemonList.push(pokemon);
+    // }
+
+    function add(pokemon) {
+        if (
+            typeof pokemon === 'object' &&
+            'name' in pokemon &&
+            'weight' in pokemon &&
+            'height' in pokemon &&
+            'abilities' in pokemon &&
+            'types' in pokemon
+        ) {
+            pokemonList.push(pokemon);
+        } else {
+            console.log('Pokemon is not correct');
+        }
+    }
+
     function getAll() {
         return pokemonList;
     }
-    // Function adds pokemon and validates typeof    
-    function add(pokemon) {
-        if (typeof pokemon !== 'object') {
-            console.log('Please assign a Pokemon');
-        }
-        let keys = Object.keys(pokemon);
-        if (!keys.includes('name')) {
-            console.log('Requirements are missing');
-        }
-        pokemonList.push(pokemon);
+
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listpokemon = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button-class');
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
     }
+
 
     // filter function. Starts at 0 as array
     function filterPokemonByName(name) {
@@ -45,10 +71,10 @@ let pokemonRepository = (function () {
         return result[0];
     }
 
-    // return function
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     };
 })();
 
@@ -58,7 +84,7 @@ console.log(pokemonRepository.getAll()); //[{name: 'Mew'}]
 
 // forEach() loops 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write(pokemon.name + ' - Height: ' + pokemon.height + 'm' + '<br>');
+    pokemonRepository.addListItem(pokemon);
 });
 
 

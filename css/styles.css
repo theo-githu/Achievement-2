@@ -9,6 +9,11 @@ body {
     font-size: 20px;
 }
 
+h1 {
+    font-family: 'Noto Sans', monospace;
+    font-weight: 400;
+}
+
 .page-header {
     display: flex;
     width: 100%;
@@ -18,4 +23,36 @@ body {
 
 .page-header__item {
     flex: 0 1 200px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.pokemon-list {
+    text-decoration: none;
+}
+
+.button-class {
+    display: flex;
+    text-decoration: none;
+    background-color: #4caf50;
+    border: none;
+    color: #4caf50;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
 }

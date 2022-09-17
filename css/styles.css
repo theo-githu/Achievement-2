@@ -7,6 +7,7 @@ body {
     background-color: #e0b354;
     font-weight: 400;
     font-size: 20px;
+    margin: 0 5%;
 }
 
 h1,
@@ -16,48 +17,29 @@ h3 {
     font-weight: 400;
 }
 
-.page-header {
-    display: flex;
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-}
-
-.page-header__item {
-    flex: 0 1 200px;
-}
 
 .main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    margin: auto;
+    text-align: center;
 }
 
 .main-header {
-    display: flex;
-    font-size: 24px;
-    justify-content: flex-start;
+    margin: 10px 0;
 }
 
-/* .pokemon-list {
+.pokemon-list {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-} */
+    padding: 0;
+    margin: 0;
+}
 
 .button-class {
+    width: 200px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: #4caf50;
     text-decoration: none;
-    background-color: #4caf50;
-    border: none;
-    color: #4caf50;
-    padding: 16px 32px;
-    text-align: start;
-    display: inline-block;
-    margin: 4px 2px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: black;
+    margin: 2px 0;
+    font-weight: 600;
+    font-size: 16px;
 }

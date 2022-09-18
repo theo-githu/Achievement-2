@@ -5,7 +5,7 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         if (
             typeof pokemon === 'object' &&
-            'name' in pokemon &&
+            'name' in pokemon
             // 'weight' in pokemon &&
             // 'height' in pokemon &&
             // 'abilities' in pokemon &&
@@ -69,7 +69,7 @@ let pokemonRepository = (function () {
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(item).then(function () {
-            console.log(pokemon);
+            console.log(item);
         });
     }
 
@@ -80,8 +80,8 @@ let pokemonRepository = (function () {
     // }
 
     return {
-        getAll: getAll,
         add: add,
+        getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,

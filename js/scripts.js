@@ -95,4 +95,6 @@ pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
 });
 
-
+new Promise((resolve, reject) => {
+    
+})

@@ -6,10 +6,10 @@ let pokemonRepository = (function () {
         if (
             typeof pokemon === 'object' &&
             'name' in pokemon &&
-            'weight' in pokemon &&
-            'height' in pokemon &&
-            'abilities' in pokemon &&
-            'types' in pokemon
+            // 'weight' in pokemon &&
+            // 'height' in pokemon &&
+            // 'abilities' in pokemon &&
+            // 'types' in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
@@ -45,7 +45,7 @@ let pokemonRepository = (function () {
                     detailsUrl: item.url
                 };
                 add(pokemon);
-                //console.log(pokemon);
+                console.log(pokemon);
             });
         }).catch(function (e) {
             console.error(e);
@@ -60,7 +60,7 @@ let pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.weight = details.weight;
             item.height = details.height;
-            item.abilities = details.abilities;
+            // item.abilities = details.abilities;
             item.types = details.types;
         }).catch(function (e) {
             console.error(e);
@@ -74,10 +74,10 @@ let pokemonRepository = (function () {
     }
 
     // filter function. Starts at 0 as array
-    function filterPokemonByName(name) {
-        let result = getAll().filter((pokemon) => pokemon.name == name);
-        return result[0];
-    }
+    // function filterPokemonByName(name) {
+    //     let result = getAll().filter((pokemon) => pokemon.name == name);
+    //     return result[0];
+    // }
 
     return {
         getAll: getAll,

@@ -60,7 +60,7 @@ let pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.weight = details.weight;
             item.height = details.height;
-            // item.abilities = details.abilities;
+            item.abilities = details.abilities;
             item.types = details.types;
         }).catch(function (e) {
             console.error(e);
@@ -88,11 +88,6 @@ let pokemonRepository = (function () {
         showDetail: showDetails
     };
 })();
-
-// code now obsolete as information is from API
-// console.log(pokemonRepository.getAll()); //[]
-// pokemonRepository.add({ name: 'Mew', height: 0.4, weight: '4kg', abilities: ['Synchronize'], types: ['psychic'] });
-// console.log(pokemonRepository.getAll()); //[{name: 'Mew'}]
 
 // forEach() loops 
 pokemonRepository.loadList().then(function () {

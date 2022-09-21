@@ -8,6 +8,7 @@ body {
     font-weight: 400;
     font-size: 20px;
     margin: 0 5%;
+    text-transform: capitalize;
 }
 
 h1,
@@ -42,6 +43,7 @@ h3 {
     margin: 2px 0;
     font-weight: 600;
     font-size: 16px;
+    text-transform: capitalize;
 }
 
 /* /* for the modal container */
@@ -73,13 +75,13 @@ h3 {
 
 .modal {
     margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
 }
 
 .modal-close {
@@ -89,12 +91,12 @@ h3 {
     background: none;
     color: #777;
     text-decoration: underline;
-  }
-  
-  .modal h1 {
+}
+
+.modal h1 {
     margin-top: 0;
-  }
-  
-  .modal p {
+}
+
+.modal p {
     margin-bottom: 0;
-  }
+}

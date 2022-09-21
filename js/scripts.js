@@ -25,7 +25,7 @@ let pokemonRepository = (function () {
         let pokemonList = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
-        button.innerText = uppercaseFirst(pokemon.name);
+        button.innerText = pokemon.name;
         button.classList.add('button-class');
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
@@ -92,19 +92,18 @@ let pokemonRepository = (function () {
             closeButtonElement.addEventListener('click', hideModal);
 
             let modalHeader = document.createElement('h1');
-            modalHeader.innerText = uppercaseFirst(pokemon.name);
+            modalHeader.innerText = pokemon.name;
 
             let modalContent = document.createElement('div');
             modalContent.classList.add('modal-content');
 
-            let imageContainer = document.createElement('div');
-            imageContainer.classList.add('image-container');
             let imageContainer = document.createElement('img');
+            imageContainer.classList.add('image-container');
             imageContainer.src = pokemon.imageUrl;
             imageContainer.alt = 'Pokemon Portrait';
 
             let pokemonInfoA = document.createElement('p');
-            pokemonInfoA.innerHTML = 'Height: ${pokemon.height}';
+            pokemonInfoA.innerHTML = 'Height: ' + pokemon.height;
             let pokemonInfoB = document.createElement('p');
             pokemonInfoB.innerText = 'Type: ' + pokemonTypes(pokemon);
 
@@ -115,7 +114,6 @@ let pokemonRepository = (function () {
             modalContent.appendChild(imageContainer);
             modalContent.appendChild(pokemonInfoA);
             modalContent.appendChild(pokemonInfoB);
-            modalContainer.appendChild(pokemonImage);
 
             //Fetch the type names from the types array of the detailed pokemon info object and assign them to a string. 
             function pokemonTypes(pokemon) {
@@ -156,14 +154,6 @@ let pokemonRepository = (function () {
         }
     });
 
-
-
-    // filter function. Starts at 0 as array
-    // function filterPokemonByName(name) {
-    //     let result = getAll().filter((pokemon) => pokemon.name == name);
-    //     return result[0];
-    // }
-
     return {
         add: add,
         getAll: getAll,
@@ -180,7 +170,6 @@ pokemonRepository.loadList().then(function () {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
 
 
    // Function adds pokemon and validates typeof    

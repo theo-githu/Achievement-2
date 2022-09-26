@@ -5,10 +5,10 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         if (
             typeof pokemon === 'object' &&
-            'name' in pokemon && 'detailsUrl' in pokemon
-            // 'weight' in pokemon &&
-            // 'height' in pokemon &&
-            // 'abilities' in pokemon &&
+            'name' in pokemon && 'detailsUrl' in pokemon &&
+            'weight' in pokemon &&
+            'height' in pokemon &&
+            'abilities' in pokemon
             // 'types' in pokemon
         ) {
             pokemonList.push(pokemon);

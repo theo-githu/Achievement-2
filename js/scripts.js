@@ -76,44 +76,69 @@ let pokemonRepository = (function () {
     modal.classList.add('modal');
     modalContainer.appendChild(modal);
 
-    // addListItem calls this function, via click event on pokemon button.
-    // Modal will be shown with additional pokemon information.
     function showDetails(pokemon) {
-        pokemonRepository.loadDetails(pokemon).then(function () {
-            console.log(pokemon)
+        function showModal(pokemon) {
+            let modalBody = $('.modal-body');
+            let modalTitle = $('modal-title');
+            let modalHeader = $('modal-header');
 
-            // show modal. When button is clicked, 'is-visible' class is added to the container.
-            modalContainer.classList.add('is-visible');
+            //clear existing content of the modal
+            modalTitle.empty();
+            modalBody.empty();
 
-            // add new modal content. 
-            let closeButtonElement = document.createElement('button');
-            closeButtonElement.classList.add('modal-close-button');
-            closeButtonElement.innerText = 'Close';
-            closeButtonElement.addEventListener('click', hideModal);
+            //creating elements for modal content
+            let nameElement = $('<h1> + pokemon.name + </h1>');
 
-            let modalHeader = document.createElement('h1');
-            modalHeader.innerText = pokemon.name;
+            let imageElement = $('<img class='modal - img' style='width: 50 % '>');
+            imageElement.attr('src', pokemon.imageUrl);
 
-            let modalContent = document.createElement('div');
-            modalContent.classList.add('modal-content');
+            let heightElement = $('<p> + pokemon.height + </p>');
 
-            let imageContainer = document.createElement('img');
-            imageContainer.classList.add('image-container');
-            imageContainer.src = pokemon.imageUrl;
-            imageContainer.alt = 'Pokemon Portrait';
+            let weightElement = $('<p> + pokemon.weight + </p>');
 
-            let pokemonInfoA = document.createElement('p');
-            pokemonInfoA.innerHTML = 'Height: ' + pokemon.height;
-            let pokemonInfoB = document.createElement('p');
-            pokemonInfoB.innerText = 'Type: ' + pokemonTypes(pokemon);
+            let typesElement = $('<p> + 'types: ' + pokemon.types + </p>');
 
-            // Append all elements created
-            modal.appendChild(closeButtonElement);
-            modal.appendChild(modalHeader);
-            modal.appendChild(modalContent);
-            modalContent.appendChild(imageContainer);
-            modalContent.appendChild(pokemonInfoA);
-            modalContent.appendChild(pokemonInfoB);
+            modalTitle.append(nameElement);
+            modalBoday.append(imageElement);
+            modalBody.append(heightElement);
+            modalBody.append(weightElement);
+            modalBody.append(typesElement);
+
+            // pokemonRepository.loadDetails(pokemon).then(function () {
+            //     console.log(pokemon)
+
+            //     // show modal. When button is clicked, 'is-visible' class is added to the container.
+            //     modalContainer.classList.add('is-visible');
+
+            //     // add new modal content. 
+            //     let closeButtonElement = document.createElement('button');
+            //     closeButtonElement.classList.add('modal-close-button');
+            //     closeButtonElement.innerText = 'Close';
+            //     closeButtonElement.addEventListener('click', hideModal);
+
+            //     let modalHeader = document.createElement('h1');
+            //     modalHeader.innerText = pokemon.name;
+
+            //     let modalContent = document.createElement('div');
+            //     modalContent.classList.add('modal-content');
+
+            //     let imageContainer = document.createElement('img');
+            //     imageContainer.classList.add('image-container');
+            //     imageContainer.src = pokemon.imageUrl;
+            //     imageContainer.alt = 'Pokemon Portrait';
+
+            //     let pokemonInfoA = document.createElement('p');
+            //     pokemonInfoA.innerHTML = 'Height: ' + pokemon.height;
+            //     let pokemonInfoB = document.createElement('p');
+            // //     pokemonInfoB.innerText = 'Type: ' + pokemonTypes(pokemon);
+
+            //     // Append all elements created
+            //     modal.appendChild(closeButtonElement);
+            //     modal.appendChild(modalHeader);
+            //     modal.appendChild(modalContent);
+            //     modalContent.appendChild(imageContainer);
+            //     modalContent.appendChild(pokemonInfoA);
+            //     modalContent.appendChild(pokemonInfoB);
 
             //Fetch the type names from the types array of the detailed pokemon info object and assign them to a string. 
             function pokemonTypes(pokemon) {

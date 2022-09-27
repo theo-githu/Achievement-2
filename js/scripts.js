@@ -116,25 +116,25 @@ let pokemonRepository = (function () {
     }
 
     // reset content in the modal and hide modal container. 
-    // function hideModal() {
-    //     modal.innerHTML = '';
-    //     modalContainer.classList.remove('is-visible');
-    // }
+    function hideModal() {
+        modal.innerHTML = '';
+        modalContainer.classList.remove('is-visible');
+    }
 
 
-    // window.addEventListener('keydown', (e) => {
-    //     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    //         hideModal();
-    //     }
-    // });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
 
-    // modalContainer.addEventListener('click', (e) => {
-    //     //only want to close if user clicks on overlay
-    //     let target = e.target;
-    //     if (target === modalContainer) {
-    //         hideModal();
-    //     }
-    // });
+    modalContainer.addEventListener('click', (e) => {
+        //only want to close if user clicks on overlay
+        let target = e.target;
+        if (target === modalContainer) {
+            hideModal();
+        }
+    });
 
     return {
         add: add,

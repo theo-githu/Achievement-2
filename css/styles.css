@@ -1,54 +1,73 @@
-* {
-    box-sizing: border-box;
-}
+ :root {
+     --primary-color: #e0b354;
+     --secondary-colour: #4caf50;
+     --border-colour: black;
+ }
 
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: #e0b354;
-    font-weight: 400;
-    font-size: 20px;
-    margin: 0 5%;
-    text-transform: capitalize;
-}
+ * {
+     box-sizing: border-box;
+ }
 
-h1,
-h2,
-h3 {
-    font-family: 'Noto Sans', monospace;
-    font-weight: 400;
-}
+ body {
+     font-family: 'Lato', sans-serif;
+     background-color: var(--primary-color);
+     font-weight: 600;
+     margin: 1rem;
+     text-transform: capitalize;
+ }
 
+ .button-class {
+     width: 15rem;
+     height: 5rem;
+     border: 3px solid var(--border-colour);
+     border-radius: 10px;
+     background: var(--secondary-colour);
+     margin: 2px 0;
+     font-size: 1rem;
+     text-transform: capitalize;
+     cursor: pointer;
+ }
 
-.main {
-    text-align: center;
-}
+ .button-class:hover,
+ .button-class:focus {
+     opacity: 0.8;
+ }
 
-.main-header {
-    margin: 10px 0;
-}
+ li {
+     list-style: none;
+ }
 
-.pokemon-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+ .container {
+     text-align: center;
+     align-items: center;
+     margin-top: 5rem;
+ }
 
-.button-class {
-    width: 200px;
-    height: 50px;
-    border: 3px solid black;
-    border-radius: 10px;
-    background: #4caf50;
-    text-decoration: none;
-    margin: 2px 0;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: capitalize;
-}
+ .navbar {
+     background-color: var(--primary-color);
+     color: var(--border-colour);
+ }
 
-/* /* for the modal container */
+ .nav-img {
+     width: 2.5rem;
+ }
 
-#modal-container {
+ .pokemon-list {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+ }
+
+ /* Media Queries  */
+ @media all and (max-width:500px) {
+     .button {
+         width: 10rem;
+         font-size: 0.7rem;
+     }
+ }
+
+ /* /* for the modal container */
+
+ /* #modal-container {
     display: none;
 }
 
@@ -63,16 +82,16 @@ h3 {
     background: rgba(0, 0, 0, 0.5);
 
     /* to show it above other content */
-    z-index: 999;
+ /* z-index: 999; */
 
-    /* to allow scrolling if the screen is not long enough */
-    overflow: auto;
+ /* to allow scrolling if the screen is not long enough */
+ /* overflow: auto; */
 
-    /* to center the modal */
-    display: grid;
-    text-align: center;
-}
-
+ /* to center the modal */
+ /* display: grid; */
+ /* text-align: center; */
+ /* } */
+ /* 
 .modal {
     margin: auto;
     display: inline-block;
@@ -99,4 +118,4 @@ h3 {
 
 .modal p {
     margin-bottom: 0;
-}
+}  */

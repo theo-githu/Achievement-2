@@ -15,7 +15,6 @@
      margin: 1rem;
      text-transform: capitalize;
      padding-top: 50px;
-     text-align: center;
  }
 
  .button-class {
@@ -46,7 +45,7 @@
  }
 
  .navbar {
-     background-color: var(--primary-color);
+     background-color: var(--secondary-color);
      color: var(--border-colour);
  }
 

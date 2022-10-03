@@ -27,6 +27,8 @@ let pokemonRepository = (function () {
         let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.classList.add('button-class');
+        button.setAttribute("data-toggle", "modal");
+        button.setAttribute("data-toggle", ".modal");
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
         // add event listener - listens to clicks on pokemon buttons and returns information of the button

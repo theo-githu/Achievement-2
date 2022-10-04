@@ -62,7 +62,7 @@ let pokemonRepository = (function () {
             pokemon.imageUrl = details.sprites.front_default;
             pokemon.weight = details.weight;
             pokemon.height = details.height;
-            pokemon.types = details.types.map((type) => type.type.name).join(',');
+            pokemon.types = details.types.map((type) => type.type.name).join(', ');
         }).catch(function (e) {
             console.error(e);
         });
@@ -90,7 +90,7 @@ let pokemonRepository = (function () {
 
     function showModal(pokemon) {
         let modalBody = $('.modal-body');
-        let modalTitle = $('modal-title');
+        let modalTitle = $('.modal-title');
 
 
         //clear existing content of the modal

@@ -1,7 +1,7 @@
  :root {
      --primary-color: #e0b354;
-     --secondary-colour: #4caf50;
-     --border-colour: black;
+     --secondary-color: #4caf50;
+     --border-color: black;
  }
 
  * {
@@ -20,9 +20,9 @@
  .button-class {
      width: 15rem;
      height: 5rem;
-     border: 3px solid var(--border-colour);
+     border: 3px solid var(--border-color);
      border-radius: 10px;
-     background: var(--secondary-colour);
+     background: var(--secondary-color);
      margin: 2px 0;
      font-size: 1rem;
      text-transform: capitalize;
@@ -46,12 +46,12 @@
 
  .navbar {
      background-color: var(--secondary-color);
-     color: var(--border-colour);
+     color: var(--border-color);
  }
 
- .nav-img {
-     width: 2.5rem;
- }
+ /* .nav-img {
+     width: 5rem;
+ } */
 
  .pokemon-list {
      display: grid;

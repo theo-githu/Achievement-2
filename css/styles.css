@@ -49,9 +49,6 @@
      color: var(--border-color);
  }
 
- /* .nav-img {
-     width: 5rem;
- } */
 
  .pokemon-list {
      display: grid;
